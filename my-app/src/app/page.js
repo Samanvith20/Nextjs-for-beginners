@@ -1,11 +1,13 @@
 import Exmpleclient from "./Exampleclient"
 import ExampleServer from "./ExampleServer"
+import Serverfetching from "./serverfetching"
 export default function Page() {
   return (
    <>
-  <h1>Hello, Next.js!</h1>
+
   <Exmpleclient/>
   <ExampleServer/>
+  <Serverfetching/>
   </>
   )
 }
