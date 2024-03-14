@@ -13,7 +13,7 @@ export default function ProductsPage() {
       const fetchData = async () => {
         const response = await fetch("https://dummyjson.com/products");
         const json = await response.json();
-        console.log(json.products);
+        //console.log(json.products);
         setProducts(json.products);
       };
 
@@ -22,19 +22,19 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div>
-      <h1>In this we have to render all the products of my-website</h1>
-      {products && (
-        <ul>
-          {products.map((product, index) => (
-            <li key={index}>
-               <h1>{product.title} </h1>
+    <div className='border-2 border-gray-400 p-4'>
+  <h1 className='text-2xl font-bold mb-4'>Products list</h1>
+  {products && (
+    <ul>
+      {products.map((product, index) => (
+        <li key={index} className='mb-4'>
+          <h2 className='text-xl font-semibold'>{product.title}</h2>
+          <p className='text-gray-700'>{product.description}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
 
-            <p>{product.description}</p>
-</li>
-          ))}
-        </ul>
-      )}
-    </div>
   );
 }
